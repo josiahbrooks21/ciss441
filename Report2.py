@@ -10,7 +10,7 @@ print("")
 def main():
 	# this is my header row
 	print("{0:<17} {1:<25} {2:<10} {3:<10} {4:<4}".format(
-			"appointment type", "appointment translation", "salmax", "salmin", "sum"))
+			"a appointment", "a translation", "salmax", "salmin", "sum"))
 			
 	cursor = conn.execute("""
 		select toa.toatyp, toa.toatypt, max(f.salary) salmax, min(f.salary) salmin, count(*) ct
@@ -22,10 +22,10 @@ def main():
 	""")
 	
 	for row in cursor:
-		appointment_type, appointment_translation, salmax, salmin, sum = row
+		a_appointment, a_translation, salmax, salmin, sum = row
 		print("{0:<17} {1:<25} {2:<10} {3:<10} {4:<4}".format(
-			appointment_type, 
-			appointment_translation[0:14], 
+			a_appointment, 
+			a_translation[0:14], 
 			salmax, 
 			salmin,
 			sum
